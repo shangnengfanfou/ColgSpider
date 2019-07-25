@@ -1,0 +1,25 @@
+{
+  "name": "bokeyuan_spider",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node --inspect=4397 ./server/index.js "
+  },
+  "dependencies": {
+    "async": "^3.1.0",
+    "cheerio": "^1.0.0-rc.2",
+    "colors": "^1.2.1",
+    "express": "^4.16.3",
+    "nodejieba": "^2.3.1",
+    "opn": "^5.3.0",
+    "puppeteer": "^1.2.0",
+    "puppeteer-cn": "^0.1.7",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "mongoose": "^5.0.13",
+    "nodemon": "^1.17.3"
+  }
+}
