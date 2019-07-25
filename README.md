@@ -29,8 +29,11 @@ npm run dev
 >
 >cheerio
 :    cheerio是nodejs的抓取页面模块，为服务器特别定制的，快速、灵活、实施的jQuery核心实现。
+>
 >request-promise
 :    http请求模块，用于请求网页获取数据
+>
 >nodejieba
 :    最好的nodejs中文分词模块
+>
 
