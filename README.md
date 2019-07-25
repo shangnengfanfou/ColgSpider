@@ -3,7 +3,7 @@
 
 # 效果图
 
-![词云演示1]('./public/images/ciyun.png')
+![词云演示1](./public/images/ciyun.png)
  
 # 使用
 先下载或者clone代码
