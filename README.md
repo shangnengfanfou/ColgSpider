@@ -24,12 +24,13 @@ npm run dev
 其实就是先拿到网站主页，分析`html`,，根据规律拿到帖子的`post`地址，然后依次请求地址，分析拿回的数据，筛选出玩家发布的内容。
 
 ## 核心依赖
- puppeteer   
+>puppeteer   
  :    Puppeteer是谷歌官方出品的一个通过DevTools协议控制headless Chrome的Node库。可以通过Puppeteer的提供的api直接控制Chrome模拟大部分用户操作来进行UI Test或者作为爬虫访问页面来收集数据。
-cheerio
+>
+>cheerio
 :    cheerio是nodejs的抓取页面模块，为服务器特别定制的，快速、灵活、实施的jQuery核心实现。
-request-promise
+>request-promise
 :    http请求模块，用于请求网页获取数据
-nodejieba
+>nodejieba
 :    最好的nodejs中文分词模块
 
