@@ -7,7 +7,7 @@
     "dev": "node --inspect=4397 ./server/index.js "
   },
   "dependencies": {
-    "async": "^3.1.0",
+    "async": "^3.2.2",
     "cheerio": "^1.0.0-rc.2",
     "colors": "^1.2.1",
     "express": "^4.16.3",
