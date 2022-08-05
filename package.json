@@ -19,7 +19,7 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "mongoose": "^5.0.13",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.17.3"
   }
 }
