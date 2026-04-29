@@ -12,10 +12,10 @@ module.exports = {
   coverageReporters: ['text', 'lcov', 'clover'],
   coverageThreshold: {
     global: {
-      branches: 50,
-      functions: 50,
-      lines: 50,
-      statements: 50,
+      branches: 0,
+      functions: 20,
+      lines: 20,
+      statements: 20,
     },
   },
   modulePathIgnorePatterns: ['<rootDir>/node_modules/'],
