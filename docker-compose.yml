@@ -1,0 +1,36 @@
+services:
+  app:
+    build: .
+    ports:
+      - "4396:4396"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_DB_URL=mongodb://mongo:27017/colg
+      - NODE_ENV=production
+    volumes:
+      - ./public:/app/public
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+  # Development-only: run tests in container
+  test:
+    build: .
+    command: npm test
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_DB_URL=mongodb://mongo:27017/colg_test
+      - NODE_ENV=test
+    profiles:
+      - test
+
+volumes:
+  mongo-data:

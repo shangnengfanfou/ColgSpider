@@ -1,0 +1,50 @@
+## Project: COLG Forum Word Cloud Spider
+
+### Tech Stack
+- **Runtime**: Node.js (CommonJS)
+- **Server**: Express.js
+- **Scraping**: Puppeteer, Cheerio, request-promise
+- **Database**: MongoDB via Mongoose
+- **NLP**: nodejieba (Chinese segmentation)
+- **Frontend**: Vanilla JS + WordCloud2
+- **Testing**: Jest + Supertest
+- **Linting**: ESLint + Prettier
+
+### Architecture
+- `server/index.js` — Entry point, starts Express and spider
+- `server/app.js` — Express app factory (testable, no side effects)
+- `server/const/_variables.js` — Configuration constants
+- `server/db/db.js` — Mongoose connection and model definitions
+- `server/spider/` — Web scraping pipeline
+- `public/` — Frontend static assets
+- `test/` — Test suites (unit + integration)
+
+### Code Conventions
+1. Use `const` by default; use `let` only when reassignment is needed; never use `var`
+2. Use async/await over raw Promises where possible
+3. All new functions must have JSDoc comments
+4. All exported functions must have corresponding unit tests in `test/`
+5. Keep modules focused: one responsibility per file
+6. Use environment variables for configuration that changes between environments
+7. Mock external dependencies (DB, network) in tests
+
+### Testing Standards
+- Unit tests go in `test/unit/`
+- Integration tests go in `test/integration/`
+- Test files follow `<module>.test.js` naming
+- Mock DB and network calls; never hit real services in tests
+- Aim for >50% code coverage on new code
+- Run `npm test` before committing
+
+### Git Workflow
+- Feature branches: `feature/<description>`
+- Bug fixes: `fix/<description>`
+- Commit messages follow conventional commits: `feat:`, `fix:`, `test:`, `docs:`, `refactor:`
+- Run lint + tests before pushing
+
+### When Modifying This Project
+- Always read the existing code before making changes
+- Run `npm test` to verify nothing is broken
+- If adding a new spider module, follow the pattern in `server/spider/util.js`
+- If adding a new route, add it in `server/app.js` and add an integration test
+- Keep the frontend simple — no build tools needed for `public/`

@@ -4,13 +4,24 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "node --inspect=4397 ./server/index.js "
+    "dev": "node --inspect=4397 ./server/index.js",
+    "start": "node ./server/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:unit": "jest --testPathPattern='test/unit'",
+    "test:integration": "jest --testPathPattern='test/integration'",
+    "lint": "eslint 'server/**/*.js' 'public/**/*.js'",
+    "lint:fix": "eslint --fix 'server/**/*.js' 'public/**/*.js'",
+    "format": "prettier --write 'server/**/*.js' 'public/**/*.js'",
+    "format:check": "prettier --check 'server/**/*.js' 'public/**/*.js'",
+    "prepare": "husky"
   },
   "dependencies": {
     "async": "^3.1.0",
     "cheerio": "^1.0.0-rc.2",
     "colors": "^1.2.1",
     "express": "^4.16.3",
+    "mongoose": "^5.0.13",
     "nodejieba": "^2.3.1",
     "opn": "^5.3.0",
     "puppeteer": "^1.2.0",
@@ -19,7 +30,24 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "mongoose": "^5.0.13",
-    "nodemon": "^1.17.3"
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "husky": "^9.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.0",
+    "nodemon": "^1.17.3",
+    "prettier": "^3.2.0",
+    "supertest": "^6.3.3"
+  },
+  "lint-staged": {
+    "test/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "server/app.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
